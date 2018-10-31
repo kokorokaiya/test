@@ -1,0 +1,60 @@
+div{ width:50px;
+     height:50px
+}
+
+.box1{background-color: skyblue;
+     position: absolute;
+     top: 200px;
+     left:200px;
+
+}
+
+
+.box2{background-color: red;
+}
+
+.box3{background-color: green;
+}
+
+
+
+.box{width:50px;
+     height:50px;
+}
+
+.box._1{background-color: skyblue;
+}
+
+.box._2{background-color: red;
+         position: absolute;
+         top:100px;
+         left:100px;
+}
+
+.box._3{background-color: green;}
+
+p{font-size:20px;}
+
+.bar{
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    height:50px;
+    background-color: lightgrey;
+    left:0px;
+}
+
+#bottomline{
+    position:fixed;
+    color: white;
+    bottom:0px;
+    width:100%;
+    height:30px;
+    background-color: gray;
+    left:0px;
+    text-align: center;
+}
+
+
+
+

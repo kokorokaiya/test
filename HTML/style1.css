@@ -1,0 +1,36 @@
+body{
+    font-family: sans-serif;
+}
+
+.hello{
+    text-align: center;
+}
+
+h2{
+    text-align: left;
+}
+
+.hello{
+    font-size: 40px;
+    text-align: center;
+    color: blue;
+}
+
+
+.abc{
+    font-size: 20px;
+    text-align: center;
+    color: blue;
+}
+
+
+ul{list-style-type: none;}
+
+ul{list-style-type: none;}
+.no1{color: red;}
+
+
+.abcd{font-family: "Meiryo", sans-serif;
+      font-size: 30px}
+
+.xyz{color: yellow;}
