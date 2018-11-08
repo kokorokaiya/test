@@ -15,13 +15,13 @@
  <s:submit value = "HelloStruts"/>
  </s:form>
 
- <form action ="WelcomeAction">
+ <s:form action ="WelcomeAction">
   <s:submit value = "welcome"/>
- </form>
+ </s:form>
 
- <form action ="InquiryAction">
+ <s:form action ="InquiryAction">
   <s:submit value = "問い合わせ"/>
- </form>
+ </s:form>
 
  <h3>新規ユーザー登録</h3>
  GET通信
