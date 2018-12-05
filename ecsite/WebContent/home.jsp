@@ -45,12 +45,13 @@
      width:780px;
      margin:30px auto;
      border:1px solid #333;
+     border-radius:10px 10px 10px 10px;
      }
 
      #header {
      width: 100%;
      height: 80px;
-     background-color: black;
+     background-color:#99CCCC;
      }
 
      #main {
@@ -62,7 +63,7 @@
      #footer {
      width:100%;
      height:80px;
-     background-color:black;
+     background-color:#99CCCC;
      clear:both;
      }
 
@@ -70,6 +71,7 @@
      #text-center {
      display: inline-black;
      text-align: center;
+
      }
 
 
@@ -87,12 +89,17 @@
         <p>Home</p>
       </div>
 
-
+      <h3>WELCOME</h3>
 
       <div id ="text-center">
       <s:form action = "HomeAction">
       <s:submit value="商品購入" />
       </s:form>
+
+<%--       <div id ="text-center">
+      <s:form action = "AdminAction">
+      <s:submit value="管理者" />
+      </s:form> --%>
 
 
 
@@ -105,7 +112,7 @@
       </div>
 
       <div id = "footer">
-      <div id = "pr">
+
       </div>
      </div>
 

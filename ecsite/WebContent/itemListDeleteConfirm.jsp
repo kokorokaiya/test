@@ -17,7 +17,7 @@
         <meta name= "keywords" content="" />
         <script src ="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
 
-        <title>BuyItemConfirm画面</title>
+        <title>ItemListDeleteConfirm</title>
         <style type="text/css">
 
 
@@ -50,7 +50,7 @@
     #header {
     width:100%;
     height:80px;
-    background-color: #CC6699;
+    background-color: black;
 
     }
 
@@ -64,7 +64,7 @@
     #footer {
     width: 100%;
     height: 80px;
-    background-color:#CC6699;
+    background-color: black;
     clear:both;
     }
 
@@ -92,52 +92,63 @@
 
        <div id = "main">
        <div id = "top">
-         <p>BuyItemConfirm</p>
+         <p>ItemListDeleteConfirm</p>
        </div>
 
 
        <div>
          <s:form>
 
-         <tr>
-           <td>商品名</td>
-           <td><s:property value = "session.buyItem_name" /></td>
-         </tr>
+
+
+         <h3>全ての商品を削除します。よろしいですか？</h3>
 
 
 
-         <tr>
-           <td>値段</td>
-           <td><s:property value = "session.total_price" />
-           <span>円</span></td>
-         </tr>
+   <div>
+   <s:if test="itemList == null">
+     <h3>商品情報はありません。</h3>
+    </div>
+   </s:if>
 
 
 
-         <tr>
-           <td>購入個数</td>
-           <td><s:property value = "session.count"/>
-           <span>個</span></td>
-         </tr>
+
+   <s:elseif test = "message == null">
+   <h3>商品情報は以下になります。</h3>
+   <table border="1">
+   <tr>
+     <th>商品名</th>
+     <th>値段</th>
+     <th>個数</th>
+   </tr>
+
+   <s:iterator value ="ItemList">
+   <tr>
+    <td><s:property value = "itemName" /></td>
+    <td><s:property value = "itemPrice"/><span>円</span></td>
+    <td><s:property value = "itemStock"/><span>個</span></td>
+   </tr>
+
+   </s:iterator>
+   </table>
 
 
-         <tr>
-           <td>支払い方法</td>
-           <td><s:property value ="session.pay" /></td>
-          </tr>
+   </s:elseif>
+
+
+
+   <s:if test= "message ! = null">
+    <h3><s:property value = "message"/></h3>
+   </s:if>
+
 
 
           <tr>
-            <td><br></td>
-          </tr>
-
-
-
-          <tr>
-            <td><input type = "button" value="戻る"
-            onclick = "submitAction('HomeAction')" /></td>
-            <td><input type = "button" value ="完了"
-            onclick="submitAction('BuyItemConfirmAction')" /></td>
+            <td><input type = "button" value="キャンセル"
+            onclick = "submitAction('ItemListAction')" /></td>
+            <td><input type = "button" value ="OK"
+            onclick="submitAction('ItemListDeleteCompleteAction')" /></td>
 
           </tr>
 
@@ -159,7 +170,7 @@
 
 
        <div>
-        <p>前画面に戻る場合は<a href= '<s:url action="GoHomeAction" />'>こちら</a></p>
+        <p>前画面に戻る場合は<a href= '<s:url action="HomeAction" />'>こちら</a></p>
         <p>マイページは<a href='<s:url action = "MyPageAction" />'>こちら</a></p>
        </div>
 
@@ -178,3 +189,4 @@
 
 </body>
 </html>
+

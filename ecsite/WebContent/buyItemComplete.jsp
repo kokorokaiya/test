@@ -49,7 +49,7 @@
     #header {
     width:100%;
     height:80px;
-    background-color: black;
+    background-color:#CC6699;
 
     }
 
@@ -63,7 +63,7 @@
     #footer {
     width: 100%;
     height: 80px;
-    background-color: black;
+    background-color: #CC6699;
     clear:both;
     }
 

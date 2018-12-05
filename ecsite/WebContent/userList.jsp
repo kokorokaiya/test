@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-       pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix ="s" uri="/struts-tags" %>
 
 
@@ -17,7 +17,7 @@
         <meta http-equiv="imagetoolbar" content="no" />
         <meta name ="description" content="" />
         <meta name= "keywords" content="" />
-        <title>MyPage画面</title>
+        <title>UserList画面</title>
         <style type="text/css">
 
 
@@ -83,62 +83,51 @@
 
    <div id="main">
    <div id = "top">
-     <p>MyPage</p>
+     <p>UserList</p>
    </div>
    <div>
-   <s:if test="myPageList == null">
-     <h3>ご購入情報はありません。</h3>
+   <s:if test="userList == null">
+     <h3>ユーザー登録情報はありません。</h3>
 
 
    </s:if>
    <s:elseif test = "message == null">
-   <h3>ご購入情報は以下になります。</h3>
+   <h3>ユーザー登録情報は以下になります。</h3>
    <table border="1">
    <tr>
-     <th>商品名</th>
-     <th>値段</th>
-     <th>購入個数</th>
-     <th>支払い方法</th>
-     <th>購入日</th>
+     <th>LoginID</th>
+     <th>LoginPassword</th>
+     <th>UserName</th>
+
    </tr>
 
-
-   <s:iterator value ="myPageList">
+   <s:iterator value ="UserList">
    <tr>
-    <td><s:property value = "itemName" /></td>
-    <td><s:property value = "totalPrice"/><span>円</span></td>
-    <td><s:property value = "totalCount"/><span>個</span></td>
-    <td><s:property value = "payment"/></td>
-    <td><s:property value = "insert_date" /></td>
+    <td><s:property value = "loginId" /></td>
+    <td><s:property value = "loginPass"/></td>
+    <td><s:property value = "userName"/></td>
+
    </tr>
 
    </s:iterator>
    </table>
 
 
-   <s:form action = "MyPageAction">
-   <input type = "hidden" name = "deleteFlg" value = "1">
-   <s:submit value = "削除" method = "delete" />
-   </s:form>
-
-<!--    △ここで、name="deleteFlg" value= "1"で削除の場合は、１ですよという設定をしてあげる。 -->
-
    </s:elseif>
+
 
 
    <s:if test= "message ! = null">
     <h3><s:property value = "message"/></h3>
    </s:if>
 
-<!--    △ここでは、MyPageActionのelse if文でメッセージ設定をしているのでその表示設定をjspでする（上記）-->
+
+       <div>
+        <p>前画面に戻る場合は<a href= '<s:url action="AdminAction" />'>こちら</a></p>
+        <p>ユーザー情報を全削除する場合は<a href='<s:url action = "UserListDeleteConfirmAction" />'>こちら</a></p>
+       </div>
 
 
-
-
-   <div id = "text-right">
-     <p>Homeへ戻る場合は<a href ='<s:url action = "GoHomeAction" />'>こちら</a></p>
-     <p>ログアウトする場合は<a href='<s:url action = "LogoutAction" />'>こちら</a></p>
-     </div>
      </div>
      </div>
 
