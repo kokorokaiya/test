@@ -25,12 +25,22 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
 		session.put("loginUser", loginDTO);
 
+<<<<<<< HEAD
 		if((((LoginDTO)session.get("loginUser")).getAdminFlg()!= null)
 	         && (((LoginDTO) session.get("loginUser")).getAdminFlg().equals("1"))){
 			result = "admin";
 
 		}else if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
 			result = SUCCESS;
+=======
+		
+		
+		if(((LoginDTO)session.get("loginUser")).getLoginFlg()) {
+			result = SUCCESS;
+			
+			
+			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
+>>>>>>> d333025059078a870af4081d29b5a3cb825cbc3a
 
 		    BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 			session.put("login_user_id",loginDTO.getLoginId());
@@ -44,6 +54,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		return result;
 	}
 
+	
+	
 	    public String getLoginUserId(){
 	    	return loginUserId;
 	    }
