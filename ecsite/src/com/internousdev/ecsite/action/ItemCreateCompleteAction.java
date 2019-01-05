@@ -57,6 +57,9 @@ public class ItemCreateCompleteAction extends ActionSupport implements SessionAw
     }
 
 
+	public Map<String, Object> getSession() {
+		return session;
+	}
 
     @Override
     public void setSession(Map<String,Object> session){

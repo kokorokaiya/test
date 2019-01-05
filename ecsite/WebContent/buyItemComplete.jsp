@@ -24,7 +24,7 @@
      body {
      margin:0;
      padding:0;
-     line-height:1.6;
+    /*  line-height:1.6; */
      letter-spacing:1px;
      font-family:Verdana, Helvetica, sans-serif;
      font-size:12px;
@@ -43,15 +43,11 @@
     width:780px;
     margin:30px auto;
     border:1px solid #333;
+    border-radius:10px 10px 10px 10px;
+    font-size:30px;
+     margin-top:250px;
     }
 
-
-    #header {
-    width:100%;
-    height:80px;
-    background-color:#CC6699;
-
-    }
 
     #main {
     width: 100%;
@@ -63,28 +59,38 @@
     #footer {
     width: 100%;
     height: 80px;
-    background-color: #CC6699;
+    background-color: #f8b500;
     clear:both;
     }
+
+
+
+    h3{color: #c9171e;
+   font-family: "Avenir Next";
+    margin-top: 250px;
+    font-size: 30px;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 3px dotted black;
+    border-top:3px dotted black;
+
+
+}
 
    </style>
 
 
 </head>
 <body>
+<jsp:include page="header.jsp" />
 
-
-  <div id = "header">
-  <div id = "pr">
-  </div>
-  </div>
 
   <div id = "main">
-  <div id = "top">
-    <p>BuyItemComplete</p>
-  </div>
+
   <div>
-    <p>購入手続きが完了致しました。</p>
+    <h3>ご購入ありがとうございました。Thank You for your purchase.</h3>
+    <h4>A great big thank you for shopping with AFRICA ON AIR. We love our customers dearly, and your feedback is so helpful for us to hear.</h4><br>
+
   <div>
 
      <a href='<s:url action="MyPageAction" />'>

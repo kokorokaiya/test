@@ -13,16 +13,13 @@ import com.internousdev.ecsite.dto.UserInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 
-
 public class UserListDeleteConfirmAction extends ActionSupport implements SessionAware {
-
 
 
 	public Map<String, Object>session;
 	private UserListDAO userListDAO = new UserListDAO();
 	private ArrayList<UserInfoDTO>userList = new ArrayList<UserInfoDTO>();
 	private String message;
-
 
 
 	public String execute() throws SQLException {
@@ -32,20 +29,19 @@ public class UserListDeleteConfirmAction extends ActionSupport implements Sessio
 //        Actionクラスで、DAOに接続する文をかく↑サクセス返すだけじゃDBから情報取れない。
 
 
-
 		String result = SUCCESS;
 		return result;
 	}
 
 
-
-
+	public Map<String,Object> getSession() {
+		return session;
+	}
 
 	@Override
 	public void setSession(Map<String, Object>session){
 		this.session = session;
 	}
-
 
 
 	public ArrayList<UserInfoDTO>getUserList(){

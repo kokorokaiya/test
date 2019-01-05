@@ -26,7 +26,7 @@
   body {
      margin:0;
      padding:0;
-     line-height:1.6;
+    /*  line-height:1.6; */
      letter-spacing:1px;
      font-family:Verdana, Helvetica, sans-serif;
      font-size:12px;
@@ -45,19 +45,15 @@
     width:780px;
     margin:30px auto;
     border:1px solid #333;
+    border-radius:10px 10px 10px 10px;
+     margin-top:250px;
+     font-size:30px;
     }
 
-
-    #header {
-    width:100%;
-    height:80px;
-    background-color: black;
-
-    }
 
     #main {
     width: 100%;
-    height: 500px;
+    height: 400px;
     text-align: center;
 
     }
@@ -65,7 +61,7 @@
     #footer {
     width: 100%;
     height: 80px;
-    background-color: black;
+    background-color: #f8b500;
     clear:both;
     }
 
@@ -74,12 +70,9 @@
 
 </head>
 <body>
+<jsp:include page="header.jsp" />
 
 
-      <div id = "header">
-      <div id ="pr">
-      </div>
-      </div>
 
 
       <div id ="main">
@@ -88,18 +81,17 @@
       </div>
       <div>
 
-        <s:if test = "errorMessage ! =''">
+        <s:if test = "errorMessage !=''">
           <s:property value="errorMessage" escape="false"/>
         </s:if>
 
 
 
-
-
         <table>
         <s:form action ="UserCreateConfirmAction">
-        <tr>
 
+
+        <tr>
           <td>
             <label>ログインID:</label>
           </td>
@@ -134,8 +126,6 @@
 
 
           <s:submit value="登録"/>
-
-
 
         </s:form>
         </table>

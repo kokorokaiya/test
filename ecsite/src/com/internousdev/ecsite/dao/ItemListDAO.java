@@ -25,20 +25,12 @@ public class ItemListDAO {
 	 DBConnector dbConnector = new DBConnector();
 	 Connection connection = dbConnector.getConnection();
 
-
-
-
 		String sql ="select * from item_info_transaction";
-
-
-
-
 
 				try {
 
 					PreparedStatement preparedStatement = connection.prepareStatement(sql);
 					ResultSet resultSet = preparedStatement.executeQuery();
-
 
 					while(resultSet.next()){
 						ItemInfoDTO dto = new ItemInfoDTO();
@@ -47,7 +39,6 @@ public class ItemListDAO {
 						dto.setItemStock(resultSet.getString("item_stock"));
 						dto.setInsert_date(resultSet.getString("insert_date"));
 						itemInfoDTO.add(dto);
-
 					}
 
 

@@ -39,8 +39,6 @@ public class ItemInfoDTO {
 
 
 
-
-
 	public String getInsert_date(){
 		return insert_date;
 	}

@@ -30,21 +30,19 @@ public class ItemListDeleteConfirmAction extends ActionSupport implements Sessio
 //        Actionクラスで、DAOに接続する文をかく↑サクセス返すだけじゃDBから情報取れない。
 
 
-
 		String result = SUCCESS;
 		return result;
 	}
 
 
-
-
+	public Map<String, Object> getSession() {
+		return session;
+	}
 
 	@Override
 	public void setSession(Map<String, Object>session){
 		this.session = session;
 	}
-
-
 
 	public ArrayList<ItemInfoDTO>getItemList(){
 		return this.itemList;

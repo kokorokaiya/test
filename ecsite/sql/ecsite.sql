@@ -41,6 +41,15 @@ insert_date datetime,
 delete_date datetime
 );
 
+drop table if exists inquiry_info;
+create table inquiry_info(
+name varchar(255),
+qtype varchar(255),
+body varchar(255)
+);
+
+
+
 
 INSERT INTO item_info_transaction(item_name, item_price, item_stock)VALUES("ノートBook",100,50);
 

@@ -9,8 +9,6 @@
 <html>
 <head>
 
-
-
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
         <meta http-equiv="Content-Style-Type" content="text/css" />
         <meta http-equiv="Content-Script-Type" content="text/javascript" />
@@ -24,7 +22,7 @@
      body {
      margin:0;
      padding:0;
-     line-height:1.6;
+    /*  line-height:1.6; */
      letter-spacing:1px;
      font-family:Verdana, Helvetica, sans-serif;
      font-size: 12px;
@@ -36,31 +34,33 @@
       text-align:center;
       margin:0 auto;
 
+       border:solid 5px #ff66ff;
+       width:800px;
+       margin:30px auto;
+       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+       padding:10px;
      }
 
      #top {
      width: 780px;
      margin:30px auto;
      border:1px solid #333;
+     border-radius:10px 10px 10px 10px;
+     font-size:30px;
+      margin-top:220px;
 
-     }
-
-     #header {
-     width:100%;
-     height: 80px;
-     background-color:black;
      }
 
      #main {
      width:100%;
-     height:500px;
+     height:2000px;
      text-align:center;
      }
 
      #footer {
      width:100%;
      height:80px;
-     background-color:black;
+     background-color:#f8b500;
      clear:both;
 }
 
@@ -70,30 +70,82 @@
      text-align: right;
  }
 
+    h3 {color: #333;
+     font-family: "Avenir Next";
+     margin-top: 250px;
+     margin-left: 40px;
+     font-size: 30px;
+     font-style: italic;
+     text-align: center;
+     border-bottom: 3px dotted black;
+     border-top:3px dotted black;
+}
+
+   .submit_btn { padding: 0.5em 1em;
+    text-decoration:none;
+    border-radius:80px;
+    width:100px;
+	height : 35px;
+	margin-top : -5px;
+	margin-left : 6px;
+    font-size:10px;
+    text-align:center;
+    color:#333;
+    box-shadow:2px 2px #1a6ea0;
+    background: #f8b500;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f8b500), to(#a69425) );
+    background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#81a8cb', endColorstr='#4477a1');
+   }
+
+   .submit_btn:hover{
+    color:#fff;
+    background-color:#49a9d4;
+    box-shadow:2px 2px #1a6ea0;
+    cursor: pointer;
+    opacity:0.5;
+    background: #81a8cb;
+    background: -webkit-gradient(linear, left top, left bottom, from(#4477a1), to(#81a8cb) );
+    background: -moz-linear-gradient(-90deg, #4477a1, #81a8cb);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#4477a1', endColorstr='#81a8cb');
+}
+
+  th {
+    border-radius: 3%;
+    padding :15px;
+}
+
+   td {
+   border-radius: 3%;
+   padding: 30px;
+   border-bottom: 2px dotted #333;
+   }
+
+   tr:hover{
+    background: #fbf8e9;
+}
+
+
 
      </style>
 
 </head>
 <body>
-
-  <div id = "header">
-  <div id = "pr">
-  </div>
- </div>
+<jsp:include page="header.jsp" />
 
    <div id="main">
-   <div id = "top">
-     <p>MyPage</p>
-   </div>
+
    <div>
    <s:if test="myPageList == null">
      <h3>ご購入情報はありません。</h3>
-
-
    </s:if>
+
+
    <s:elseif test = "message == null">
-   <h3>ご購入情報は以下になります。</h3>
-   <table border="1">
+   <h3><s:property value = "session.login_user_id"/><span>さんの</span>ご購入情報は以下になります。</h3>
+
+
+   <table border="0.5">
    <tr>
      <th>商品名</th>
      <th>値段</th>
@@ -101,6 +153,7 @@
      <th>支払い方法</th>
      <th>購入日</th>
    </tr>
+
 
 
    <s:iterator value ="myPageList">
@@ -113,13 +166,13 @@
    </tr>
 
    </s:iterator>
-   </table>
+   </table><br><br>
 
 
    <s:form action = "MyPageAction">
    <input type = "hidden" name = "deleteFlg" value = "1">
-   <s:submit value = "削除" method = "delete" />
-   </s:form>
+   <s:submit value = "削除" method = "delete" class="submit_btn" />
+   </s:form><br>
 
 <!--    △ここで、name="deleteFlg" value= "1"で削除の場合は、１ですよという設定をしてあげる。 -->
 
@@ -135,10 +188,15 @@
 
 
 
-   <div id = "text-right">
-     <p>Homeへ戻る場合は<a href ='<s:url action = "GoHomeAction" />'>こちら</a></p>
-     <p>ログアウトする場合は<a href='<s:url action = "LogoutAction" />'>こちら</a></p>
-     </div>
+
+        <s:form action="GoHomeAction">
+			<s:submit value="HOMEに戻る" class="submit_btn" />
+		   </s:form><br>
+
+		   <s:form action="LogoutAction">
+			<s:submit value="ログアウトする" class="submit_btn" />
+		</s:form>
+
      </div>
      </div>
 

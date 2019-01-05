@@ -10,12 +10,16 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class LogoutAction extends ActionSupport implements SessionAware {
 
-	public Map<String, Object> session;
+	public Map<String,Object> session;
 	public String execute(){
 		session.clear();
 		return SUCCESS;
 	}
 
+
+	public Map<String,Object> getSession() {
+		return session;
+	}
 
 	@Override
 	public void setSession(Map<String,Object>session){

@@ -65,6 +65,9 @@ public class ItemCreateConfirmAction extends ActionSupport implements SessionAwa
 	    	this.itemStock = itemStock;
 	    }
 
+		public Map<String, Object> getSession() {
+			return session;
+		}
 
      @Override
      public void setSession(Map<String,Object> session){
@@ -75,10 +78,6 @@ public class ItemCreateConfirmAction extends ActionSupport implements SessionAwa
      public String getErrorMessage(){
     	 return errorMessage;
      }
-
-
-
-
 
 
      public void setErrorMessage(String errorMessage){

@@ -9,8 +9,6 @@ public class UserInfoDTO {
 	public String insert_date;
 
 
-
-
 	public String getLoginId(){
 		return loginId;
 	}

@@ -24,7 +24,7 @@
      body {
      margin:0;
      padding:0;
-     line-height:1.6;
+    /*  line-height:1.6; */
      letter-spacing:1px;
      font-family:Verdana, Helvetica, sans-serif;
      font-size: 12px;
@@ -35,6 +35,11 @@
      table {
       text-align:center;
       margin:0 auto;
+      border:solid 5px #66FFCC;
+       width:700px;
+       margin:30px auto;
+       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+       padding:10px;
 
      }
 
@@ -42,25 +47,22 @@
      width: 780px;
      margin:30px auto;
      border:1px solid #333;
+     border-radius:10px 10px 10px 10px;
+      margin-top:250px;
+      font-size:30px;
 
-     }
-
-     #header {
-     width:100%;
-     height: 80px;
-     background-color:black;
      }
 
      #main {
      width:100%;
-     height:500px;
+     height:800px;
      text-align:center;
      }
 
      #footer {
      width:100%;
      height:80px;
-     background-color:black;
+     background-color:#f8b500;
      clear:both;
 }
 
@@ -70,34 +72,57 @@
      text-align: right;
  }
 
+      h3{color: #333;
+   font-family: "Avenir Next";
+    margin-top: 250px;
+    margin-left: 40px;
+    font-size: 30px;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 3px dotted black;
+    border-top:3px dotted black;
+}
+
+  th {
+    border-radius: 3%;
+    padding :20px;
+}
+
+   td {
+   border-radius: 3%;
+   padding: 17px;
+
+   }
+
+   tr:hover{
+    background: #fbf8e9;
+}
+
+
 
      </style>
 
 </head>
 <body>
+<jsp:include page="header.jsp" />
 
-  <div id = "header">
-  <div id = "pr">
-  </div>
- </div>
+
 
    <div id="main">
-   <div id = "top">
-     <p>ItemList</p>
-   </div>
+
    <div>
    <s:if test="itemList == null">
      <h3>商品情報はありません。</h3>
-
-
    </s:if>
+
+
    <s:elseif test = "message == null">
-   <h3>商品情報は以下になります。</h3>
-   <table border="1">
+   <h3>販売中の商品は以下の品揃えです。</h3>
+   <table border="0.5">
    <tr>
      <th>商品名</th>
      <th>値段</th>
-     <th>個数</th>
+     <th>在庫数</th>
    </tr>
 
    <s:iterator value ="ItemList">
@@ -122,7 +147,7 @@
 
 
        <div>
-        <p>管理者画面に戻る場合は<a href= '<s:url action="AdminAction" />'>こちら</a></p>
+     <%--    <p>管理者画面に戻る場合は<a href= '<s:url action="AdminAction" />'>こちら</a></p> --%>
         <p>商品を削除する場合は<a href='<s:url action = "ItemListDeleteConfirmAction" />'>こちら</a></p>
        </div>
 

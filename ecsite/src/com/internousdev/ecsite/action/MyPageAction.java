@@ -25,26 +25,18 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	private String message;
 
 	public String execute() throws SQLException {
-		if (!session.containsKey("id")){
+		if (!session.containsKey("login_user_id")){
 			return ERROR;
 		}
 
-
 		if(deleteFlg == null){
-			String item_transaction_id = session.get("id").toString();
 			String user_master_id = session.get("login_user_id").toString();
+			myPageList = myPageDAO.getMyPageUserInfo(user_master_id);
+//			user_master_idを持って、DAOで情報をとってきてください。
 
-
-			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
-
-			
 		} else if(deleteFlg.equals("1")) {
 			delete();
 		}
-
-
-
-
 
 		String result = SUCCESS;
 		return result;
@@ -52,11 +44,8 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 
 	public void delete() throws SQLException {
-
-		String item_transaction_id = session.get("id").toString();
 		String user_master_id = session.get("login_user_id").toString();
-
-		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
+		int res = myPageDAO.buyItemHistoryDelete(user_master_id);
 
 		if (res > 0){
 			myPageList = null;
@@ -72,6 +61,10 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 	public void setDeleteFlg(String deleteFlg) {
 		this.deleteFlg = deleteFlg;
+	}
+
+	public Map<String,Object> getSession() {
+		return session;
 	}
 
 	@Override

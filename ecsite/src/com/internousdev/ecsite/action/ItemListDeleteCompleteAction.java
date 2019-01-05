@@ -50,6 +50,10 @@ public class ItemListDeleteCompleteAction extends ActionSupport implements Sessi
 		this.deleteFlg = deleteFlg;
 	}
 
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
 	@Override
 	public void setSession(Map<String, Object>session){
 		this.session = session;

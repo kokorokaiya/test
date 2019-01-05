@@ -26,21 +26,17 @@ public class ItemListAction extends ActionSupport implements SessionAware {
 	public String execute() throws SQLException {
 
         itemList=itemListDAO.select();
-        
-//        Actionクラスで、DAOに接続する文をかく↑　サクセス返すだけじゃDBから情報取れない。
-        
 
-        
+//        Actionクラスで、DAOに接続する文をかく↑　サクセス返すだけじゃDBから情報取れない。
+
 		String result = SUCCESS;
 		return result;
-
-
-
 	}
 
 
-
-
+	public Map<String, Object> getSession() {
+		return session;
+	}
 
 	@Override
 	public void setSession(Map<String, Object>session){
@@ -57,10 +53,10 @@ public class ItemListAction extends ActionSupport implements SessionAware {
 		this.itemList = itemList;
 
 	}
-	
+
 //	上のsetterについては、つけなくても実行されるが基本的にはgetter setter共に記述。
 
-	
+
 	public String getMessage(){
 		return this.message;
 	}

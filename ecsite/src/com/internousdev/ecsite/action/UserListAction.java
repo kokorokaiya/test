@@ -29,18 +29,14 @@ public class UserListAction extends ActionSupport implements SessionAware {
 
 //        Actionクラスで、DAOに接続する文をかく↑　サクセス返すだけじゃDBから情報取れない。
 
-
-
 		String result = SUCCESS;
 		return result;
-
-
-
 	}
 
 
-
-
+	public Map<String,Object> getSession() {
+		return session;
+	}
 
 	@Override
 	public void setSession(Map<String, Object>session){

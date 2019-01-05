@@ -25,7 +25,7 @@
      body {
      margin:0;
      padding:0;
-     line-height:1.6;
+    /*  line-height:1.6; */
      letter-spacing:1px;
      font-family:Verdana, Helvetica, sans-serif;
      font-size:12px;
@@ -44,19 +44,15 @@
     width:780px;
     margin:30px auto;
     border:1px solid #333;
+    border-radius:10px 10px 10px 10px;
+     margin-top:250px;
+     font-size: 30px;
     }
 
-
-    #header {
-    width:100%;
-    height:80px;
-    background-color: black;
-
-    }
 
     #main {
     width: 100%;
-    height: 500px;
+    height: 700px;
     text-align: center;
 
     }
@@ -64,9 +60,22 @@
     #footer {
     width: 100%;
     height: 80px;
-    background-color: black;
+    background-color:#f8b500;
     clear:both;
     }
+
+     h3{color: #333;
+   font-family: "Avenir Next";
+    margin-top: 60px;
+    margin-left: 40px;
+    font-size: 30px;
+    font-style: italic;
+    text-align: center;
+    border-bottom: 3px dotted black;
+    border-top:3px dotted black;
+
+
+}
 
 
 </style>
@@ -82,6 +91,7 @@
 
 </head>
 <body>
+<jsp:include page="header.jsp" />
 
 
        <div id = "header">
@@ -101,7 +111,7 @@
 
 
 
-         <h3>全ての商品を削除します。よろしいですか？</h3>
+         <h3>全ての商品を削除します。本当によろしいですか？ </h3>
 
 
 
@@ -115,7 +125,7 @@
 
 
    <s:elseif test = "message == null">
-   <h3>商品情報は以下になります。</h3>
+  <!--  <h4>商品情報は以下になります。</h4> -->
    <table border="1">
    <tr>
      <th>商品名</th>

@@ -4,43 +4,50 @@ package com.internousdev.ecsite.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.internousdev.ecsite.dto.BuyItemDTO;
 import com.internousdev.ecsite.util.DBConnector;
 
 
-
 public class BuyItemDAO {
 
-	private DBConnector dbConnector = new DBConnector();
-	private Connection connection = dbConnector.getConnection();
-	private BuyItemDTO buyItemDTO = new BuyItemDTO();
+	List<BuyItemDTO>buyItemDTOList = new ArrayList<BuyItemDTO>();
 
-	public BuyItemDTO getBuyItemInfo(){
-		String sql = "SELECT id, item_name, item_price FROM item_info_transaction";
+	public List<BuyItemDTO>select(){
 
-		try {
+	 DBConnector dbConnector = new DBConnector();
+	 Connection connection = dbConnector.getConnection();
 
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			ResultSet resultSet = preparedStatement.executeQuery();
+		String sql ="select * from item_info_transaction order by id";
 
-			if(resultSet.next()){
-				buyItemDTO.setId(resultSet.getInt("id"));
-				buyItemDTO.setItemName(resultSet.getString("item_name"));
-				buyItemDTO.setItemPrice(resultSet.getString("item_price"));
+				try {
 
-			}
+					PreparedStatement preparedStatement = connection.prepareStatement(sql);
+					ResultSet resultSet = preparedStatement.executeQuery();
 
-		} catch(Exception e){
-			e.printStackTrace();
-		}
+					while(resultSet.next()){
+						BuyItemDTO dto = new BuyItemDTO();
+						dto.setId(resultSet.getString("id"));
+						dto.setItemName(resultSet.getString("item_name"));
+						dto.setItemPrice(resultSet.getString("item_price"));
+						dto.setItemStock(resultSet.getString("item_stock"));
+						buyItemDTOList.add(dto);
+					}
 
-		return buyItemDTO;
-	}
+				}catch(SQLException e){
+					e.printStackTrace();
 
-	public BuyItemDTO getBuyItemDTO(){
-		return buyItemDTO;
+				} try {
+					connection.close();
 
+				} catch (SQLException e) {
+					e.printStackTrace();
+
+				}
+		           return buyItemDTOList;
 	}
 
 }
