@@ -164,6 +164,21 @@
   </div>
 
 
+<h1>OUR SERVICES</h1>
+
+<!-- <div class="lion"><img src="img/forest.jpg" alt="lion" width="400" height="280"></div> -->
+<div class="naiyou_1">
+
+ AFRICA ON AIRでは、アフリカにまつわる商品や旅の情報を提供します。<br><br>
+
+このサイトでは、ID、パスワードを持っておられる方は複数の商品を購入することができます。(id:test / pw:test)<br>
+またIDを持っておられない方は、ログイン画面にて新規登録をしていただけます。<br>
+商品一覧はログインなしでもご覧いただけます。<br>
+管理者用ログイン(id:admin / pw:admin)をすれば、管理者用ページに遷移し商品の登録や、削除ができます。<br>
+また登録ユーザーの一覧を観覧することができます。<br>
+
+
+</div>
 
 
 <h1>OUR WORK</h1>
@@ -196,21 +211,6 @@
     </div>
 
 
-<h1>OUR SERVICES</h1>
-
-<!-- <div class="lion"><img src="img/forest.jpg" alt="lion" width="400" height="280"></div> -->
-<div class="naiyou_1">
-
- AFRICA ON AIRでは、アフリカにまつわる商品や旅の情報を提供します。<br><br>
-
-このサイトでは、ID、パスワードを持っておられる方は複数の商品を購入することができます。<br>
-またIDを持っておられない方は、ログイン画面にて新規登録をしていただけます。<br>
-商品一覧は（ITEM LIST)はログインなしでもご覧いただけます。<br>
-管理者用ログインをすれば、管理者用ページに遷移し商品の登録や、削除ができます。<br>
-また登録ユーザーの一覧を観覧することができます。<br>
-
-
-</div>
 
 
 </main>
